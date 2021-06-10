@@ -20,5 +20,7 @@ module.exports = {
 		extend: {},
 	},
 	presets: [require("full-palette"),require("tw-utils/font/inter")],
-	plugins: [require('tailwindcss-debug-screens')],
+	plugins: [
+		require('tailwindcss-debug-screens'),
+	  ]
 };
