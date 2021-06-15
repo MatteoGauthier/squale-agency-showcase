@@ -33,6 +33,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-public/showcase/*.png
-public/showcase/*.jpg
-public/showcase/*.jpeg
+# public/showcase/*.png
+# public/showcase/*.jpg
+# public/showcase/*.jpeg

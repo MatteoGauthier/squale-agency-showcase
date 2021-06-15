@@ -7,10 +7,6 @@ var fs = require("fs"),
 var Stream = require("stream").Transform;
 
 var downloadImageToUrl = (url, filename, callback) => {
-	console.log('====================================');
-	console.log(url);
-	console.log('====================================');
-
 	var client = http;
 	if (url.toString().indexOf("https") === 0) {
 		client = https;
@@ -41,7 +37,6 @@ const BUCKET_URL = "https://api.imagekit.io/v1/files?path=SqualeShowcase";
 	})
 		.then((res) => res.json())
 		.catch((err) => console.error("error:" + err));
-
 	await imagesArray.map((image) => {
 		downloadImageToUrl(image.url, "./public/showcase/" + image.name);
 	});
