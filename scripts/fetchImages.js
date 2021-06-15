@@ -7,6 +7,10 @@ var fs = require("fs"),
 var Stream = require("stream").Transform;
 
 var downloadImageToUrl = (url, filename, callback) => {
+	console.log('====================================');
+	console.log(url);
+	console.log('====================================');
+
 	var client = http;
 	if (url.toString().indexOf("https") === 0) {
 		client = https;
