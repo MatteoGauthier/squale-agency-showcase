@@ -14,7 +14,7 @@ export default function Modal() {
   return (
     <Transition.Root show={isOpen} as={Fragment}>
       <Dialog as="div" static className="fixed inset-0 z-10 overflow-y-auto" initialFocus={cancelButtonRef} open={isOpen} onClose={closeModal}>
-        <div className="flex items-end justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+        <div className="flex items-end justify-center px-4 pt-24 pb-20 text-center sm:min-h-screen sm:block sm:p-0">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -40,9 +40,9 @@ export default function Modal() {
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="relative inline-block align-bottom transition-all transform bg-transparent sm:my-8 sm:mt-16 sm:align-middle sm:max-w-screen-2xl sm:w-full">
+            <div className="relative inline-block w-full px-4 align-bottom transition-all transform bg-transparent sm:my-8 sm:mt-16 sm:align-middle 2xl:px-0 sm:max-w-screen-2xl">
               {/* <img src={"/showcase/" + currentImage} alt="" className="w-full" /> */}
-              <button className="absolute p-3 rounded -right-16 bg-gray-50 bg-opacity-20" ref={cancelButtonRef} onClick={closeModal}>
+              <button className="absolute p-3 rounded right-4 -top-16 sm:-top-0 sm:-right-16 bg-gray-50 bg-opacity-20" ref={cancelButtonRef} onClick={closeModal}>
                 <XIcon className="w-6 h-6 text-gray-100" />
               </button>
 
