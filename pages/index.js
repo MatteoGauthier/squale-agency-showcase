@@ -1,27 +1,28 @@
-import Head from "next/head";import React, { useState, Fragment } from "react";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import SqualeLogo from "../components/SqualeLogo";
-import ImageCard from "../components/ImageCard";
-import { getImages } from "../lib/images";
-import Modal from "../components/Modal";
+import Head from "next/head"
+import React, { useState, Fragment } from "react"
+import Image from "next/image"
+import styles from "../styles/Home.module.css"
+import SqualeLogo from "../components/SqualeLogo"
+import ImageCard from "../components/ImageCard"
+import { getImages } from "../lib/images"
+import Modal from "../components/Modal"
 import { useStore } from "../lib/store"
+import ContactCard from "../components/ContactCard"
 
 export default function Home({ images }) {
-	// const [isOpen, setIsOpen] = useState(false);
-	const openModal = useStore((state) => state.openModal)
-	const isOpen = useStore((state) => state.isOpen)
-	const setImage = useStore((state) => state.setImage)
-	const currentImage = useStore((state) => state.currentImage)
+  // const [isOpen, setIsOpen] = useState(false);
+  const openModal = useStore((state) => state.openModal)
+  const isOpen = useStore((state) => state.isOpen)
+  const setImage = useStore((state) => state.setImage)
+  const currentImage = useStore((state) => state.currentImage)
 
-
-	return (
+  return (
     <>
       <div className="overflow-hidden">
         <div className="relative">
           <div className="mx-auto bg-white xl:max-w-screen-xl md:max-w-screen-md">
-            <div className="flex flex-col items-start h-full px-4 pt-8 pb-48 space-y-3 sm:pt-16 xl:pt-32 2xl:space-y-0 lg:px-0 2xl:items-center 2xl:flex-row">
-              <div className="2xl:w-2/3">
+            <div className="flex flex-col items-start h-full px-4 pt-8 pb-48 space-y-3 sm:pt-16 xl:pt-32 2xl:space-y-0 lg:px-0 2xl:items-center lg:flex-row">
+              <div className="lg:w-2/3">
                 <h1 aria-label="Squale.Agency" className="relative flex items-center 2xl:items-stretch">
                   <img src="/SqualeLogo.png" className="absolute hidden 2xl:block left-squale" alt="squale logo" />
                   <SqualeLogo className="sm:h-[70px]" />
@@ -35,22 +36,12 @@ export default function Home({ images }) {
                 <p className="mt-4 text-gray-800">Entre créativité et efficacité, l’équipe squale.agency fait de votre idée une réalité ;) </p>
               </div>
               <div>
-                <span className="text-lg italic font-medium underline">Parlons de votre projet</span>
-                <table className="table-auto">
-                  <tbody>
-                    <tr>
-                      <td className="pr-4 text-green-500">Mattèo Gauthier</td>
-                      <td>07 81 71 73 66</td>
-                    </tr>
-                    <tr className="">
-                      <td className="pr-4 text-green-500">Candice Fradet</td>
-                      <td>06 11 20 28 57</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <a className="font-medium text-blue-gray-800" href="mailto:hello@squale.agency">
-                  hello@squale.agency
-                </a>
+                <span className="text-lg font-medium underline ">Parlons de votre projet</span>
+                <div className="flex mt-2 space-x-2 space-y-0 lg:space-y-2 lg:space-x-0 lg:flex-col">
+                  <ContactCard />
+                  <ContactCard name="Candice Fradet" content="06 11 20 28 57" imageSrc="/candice.jpg" />
+                  <ContactCard name="Par mail" content="hello@squale.agency" imageSrc="/MailIcon.svg" />
+                </div>
               </div>
             </div>
           </div>
@@ -73,11 +64,11 @@ export default function Home({ images }) {
   )
 }
 export async function getStaticProps() {
-	const images = await getImages();
-	console.log("Images data fetched");
-	// const bookmarks = await res.json();
-	console.log(images);
-	return {
-		props: { images },
-	};
+  const images = await getImages()
+  console.log("Images data fetched")
+  // const bookmarks = await res.json();
+  console.log(images)
+  return {
+    props: { images },
+  }
 }
