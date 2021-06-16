@@ -3,17 +3,27 @@
 @import "tailwindcss/utilities";
 
 @layer utilities {
-    @variants responsive {
-        .masonry-3-col {
-            column-count: 3;
-            column-gap: 1em;
-        }
-        .masonry-2-col {
-            column-count: 2;
-            column-gap: 1em;
-        }
-        .break-inside {
-            break-inside: avoid;
-        }
+  @variants responsive {
+    .masonry-3-col {
+      column-count: 3;
+      column-gap: 1em;
+    }
+    .masonry-2-col {
+      column-count: 2;
+      column-gap: 1em;
+    }
+    .break-inside {
+      break-inside: avoid;
     }
   }
+
+  @variants responsive {
+    .img-rendering-good {
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -o-crisp-edges;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      -ms-interpolation-mode: nearest-neighbor;
+    }
+  }
+}
