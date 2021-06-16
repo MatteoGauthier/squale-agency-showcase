@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useRef, useState } from "react"
 import { Dialog, Transition } from "@headlessui/react"
-import { ExclamationIcon } from "@heroicons/react/outline"
+import { XIcon } from "@heroicons/react/outline"
 import { useStore } from "../lib/store"
 import Image from "next/image"
 
@@ -28,7 +28,7 @@ export default function Modal() {
           </Transition.Child>
 
           {/* This element is to trick the browser into centering the modal contents. */}
-          <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true" ref={cancelButtonRef}>
+          <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
             &#8203;
           </span>
           <Transition.Child
@@ -40,9 +40,15 @@ export default function Modal() {
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="inline-block overflow-hidden text-left align-bottom transition-all transform bg-transparent rounded-lg shadow-xl sm:my-8 sm:mt-16 sm:align-middle sm:max-w-screen-2xl sm:w-full">
+            <div className="relative inline-block align-bottom transition-all transform bg-transparent sm:my-8 sm:mt-16 sm:align-middle sm:max-w-screen-2xl sm:w-full">
               {/* <img src={"/showcase/" + currentImage} alt="" className="w-full" /> */}
-              <Image src={require("../public/showcase/" + currentImage)} className="w-full h-full" layout="responsive" quality={100} />
+              <button className="absolute p-3 rounded -right-16 bg-gray-50 bg-opacity-20" ref={cancelButtonRef} onClick={closeModal}>
+                <XIcon className="w-6 h-6 text-gray-100" />
+              </button>
+
+              <div className="inline-block w-full overflow-hidden text-left align-bottom transition-all transform bg-transparent rounded-lg shadow-xl">
+                <Image src={require("../public/showcase/" + currentImage)} className="w-full h-full" layout="responsive" quality={100} />
+              </div>
             </div>
           </Transition.Child>
         </div>
