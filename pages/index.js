@@ -1,23 +1,39 @@
-import Head from "next/head"
-import React, { useState, Fragment } from "react"
-import Image from "next/image"
-import styles from "../styles/Home.module.css"
+import React, { useEffect } from "react"
 import SqualeLogo from "../components/SqualeLogo"
 import ImageCard from "../components/ImageCard"
 import { getImages } from "../lib/images"
 import Modal from "../components/Modal"
 import { useStore } from "../lib/store"
 import ContactCard from "../components/ContactCard"
-
+import toast, { Toaster } from "react-hot-toast"
+import IG from '../components/icons/IG'
 export default function Home({ images }) {
   // const [isOpen, setIsOpen] = useState(false);
   const openModal = useStore((state) => state.openModal)
   const isOpen = useStore((state) => state.isOpen)
   const setImage = useStore((state) => state.setImage)
   const currentImage = useStore((state) => state.currentImage)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      toast(
+        (t) => (
+          <span className="cursor-pointer" onClick={() => window.location = "https://squale.agency/instagram"} >
+            Retrouvez nous sur Instagram 😛
+          </span>
+        ),
 
+        {
+          icon: <IG className="w-6 h-6" />,
+          position: "bottom-right",
+          duration: Infinity,
+        }
+      )
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [])
   return (
     <>
+      <Toaster />
       <div className="overflow-hidden">
         <div className="relative">
           <div className="mx-auto bg-white xl:max-w-screen-xl md:max-w-screen-md">

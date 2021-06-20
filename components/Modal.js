@@ -47,7 +47,7 @@ export default function Modal() {
               </button>
 
               <div className="inline-block w-full overflow-hidden text-left align-bottom transition-all transform bg-transparent rounded-lg shadow-xl">
-                <Image src={require("../public/showcase/" + currentImage)} className="w-full h-full" layout="responsive" quality={100} />
+                <Image alt="squale agency image fullscreen" src={require("../public/showcase/" + currentImage)} className="w-full h-full" layout="responsive" quality={100} />
               </div>
             </div>
           </Transition.Child>
