@@ -1,11 +1,6 @@
 {
     "redirects": [
       {
-        "source": "/",
-        "destination": "https://instagram.com/squale.agency",
-        "permanent": false
-      },
-      {
         "source": "/insta",
         "destination": "https://instagram.com/squale.agency",
         "permanent": true
