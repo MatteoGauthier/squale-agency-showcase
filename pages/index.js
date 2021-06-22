@@ -34,7 +34,7 @@ export default function Home({ images }) {
 	}, []);
 	return (
 		<>
-			<Toaster />
+			<Toaster onClick={() => (window.location = "https://squale.agency/instagram")} />
 			<Head>
 				<title>Squale.Agency Showcase - Agence de développement web et infographie</title>
 			</Head>
@@ -62,9 +62,9 @@ export default function Home({ images }) {
 									Entre créativité et efficacité, l’équipe squale.agency fait de votre idée une réalité ;){" "}
 								</p>
 							</div>
-							<div className="text-center sm:text-left w-full">
+							<div className="text-center sm:text-left w-full sm:w-auto">
 								<span className="text-lg font-medium underline ">Parlons de votre projet</span>
-								<div className="flex flex-col sm:flex-row mt-2 space-x-0 space-y-2 sm:space-y-0 sm:space-x-2">
+								<div className="flex flex-col mt-2 space-y-2">
 									<ContactCard />
 									<ContactCard name="Candice Fradet" content="06 11 20 28 57" imageSrc="/candice.jpg" />
 									<ContactCard name="Par mail" content="hello@squale.agency" imageSrc="/MailIcon.svg" />
