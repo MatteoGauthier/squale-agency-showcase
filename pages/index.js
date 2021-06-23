@@ -36,7 +36,7 @@ export default function Home({ images }) {
 		<>
 			<Toaster onClick={() => (window.location = "https://squale.agency/instagram")} />
 			<Head>
-				<title>Squale.Agency Showcase - Agence de développement web et infographie</title>
+				<title>Squale.Agency Showcase 🌴 - Agence de développement web et infographie</title>
 			</Head>
 			<div className="overflow-hidden">
 				<div className="relative">
@@ -97,7 +97,7 @@ export async function getStaticProps() {
 	const images = await getImages();
 	console.log("Images data fetched");
 	// const bookmarks = await res.json();
-	console.log(JSON.stringify(images));
+	// console.log(JSON.stringify(images));
 	return {
 		props: { images },
 	};
