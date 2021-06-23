@@ -65,8 +65,8 @@ export default function Home({ images }) {
 							<div className="text-center sm:text-left w-full sm:w-auto">
 								<span className="text-lg font-medium underline ">Parlons de votre projet</span>
 								<div className="flex flex-col mt-2 space-y-2">
-									<ContactCard />
 									<ContactCard name="Candice Fradet" content="06 11 20 28 57" imageSrc="/candice.jpg" />
+									<ContactCard />
 									<ContactCard name="Par mail" content="hello@squale.agency" imageSrc="/MailIcon.svg" />
 								</div>
 							</div>
