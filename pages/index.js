@@ -97,7 +97,7 @@ export async function getStaticProps() {
 	const images = await getImages();
 	console.log("Images data fetched");
 	// const bookmarks = await res.json();
-	console.log(images);
+	console.log(JSON.stringify(images));
 	return {
 		props: { images },
 	};
