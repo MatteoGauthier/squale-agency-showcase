@@ -1,5 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import clsx from "clsx";
+import Document, { Html, Head, Main, NextScript } from "next/document"
+import clsx from "clsx"
 
 class MyDocument extends Document {
 	render() {
@@ -28,14 +28,25 @@ class MyDocument extends Document {
 					<meta name="msapplication-config" content="/browserconfig.xml" />
 					<link rel="manifest" href="/manifest.json" />
 					<meta name="theme-color" content="#EFD0CA" />
+
+					<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7TJPZTH5R"></script>
+					<script
+						dangerouslySetInnerHTML={{
+							__html: ` window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+            
+              gtag('config', 'G-F7TJPZTH5R');`,
+						}}
+					/>
 				</Head>
 				<body className={clsx(process.env.NODE_ENV == "development" ? "debug-screens" : "")}>
 					<Main />
 					<NextScript />
 				</body>
 			</Html>
-		);
+		)
 	}
 }
 
-export default MyDocument;
+export default MyDocument
