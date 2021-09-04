@@ -26,9 +26,14 @@ class MyDocument extends Document {
 					<meta name="msapplication-TileColor" content="#EFD0CA" />
 					<meta name="msapplication-TileImage" content="/favicon-144x144.png" />
 					<meta name="msapplication-config" content="/browserconfig.xml" />
-                                        <meta property="og:image" content="https://squale.agency/favicon-180x180.png"/>
+                                       
 					<link rel="manifest" href="/manifest.json" />
 					<meta name="theme-color" content="#EFD0CA" />
+<meta property="og:url"                content="https://squale.agency" />
+<meta property="og:type"               content="website" />
+<meta property="og:title"              content="Squale.Agency Showcase 🌴 - Agence de développement web et infographie" />
+<meta property="og:description"        content="Entre créativité et efficacité, l’équipe squale.agency fait de votre idée une réalité ;)" />
+<meta property="og:image"              content="https://squale.agency/favicon-512x512.png" />
 
 					<script async src="https://www.googletagmanager.com/gtag/js?id=G-F7TJPZTH5R"></script>
 					<script
