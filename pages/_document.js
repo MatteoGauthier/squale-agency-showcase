@@ -26,6 +26,7 @@ class MyDocument extends Document {
 					<meta name="msapplication-TileColor" content="#EFD0CA" />
 					<meta name="msapplication-TileImage" content="/favicon-144x144.png" />
 					<meta name="msapplication-config" content="/browserconfig.xml" />
+                                        <meta property="og:image" content="https://squale.agency/favicon-180x180.png"/>
 					<link rel="manifest" href="/manifest.json" />
 					<meta name="theme-color" content="#EFD0CA" />
 
