@@ -1,1 +1,1 @@
-- [ ] Array randomze seed
+- [x] Array randomze seed
